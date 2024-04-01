@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query"
-import { ListProducts } from "../service/http/ListProducts"
+import { ListProducts } from "../http/ListProducts"
 
 export const useQueryListProducts = () => {
   return useQuery({

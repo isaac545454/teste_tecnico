@@ -1,6 +1,11 @@
-import { useQueryListProducts } from "../../query/useQueryListProducts"
+import { useQueryListProducts } from "../../service/query/useQueryListProducts"
 
 export const Home = () => {
   const { data, isLoading } = useQueryListProducts()
-  return <div></div>
+  console.log(data)
+  return (
+    <div>
+      <div>aaaaaaaa</div>
+    </div>
+  )
 }

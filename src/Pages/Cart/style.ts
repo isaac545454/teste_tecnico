@@ -22,15 +22,28 @@ export const FooterCard = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  @media (max-width: ${DEVICES.MOBILE}) {
+    flex-direction: column-reverse;
+  }
 `
 
 export const ContainerButton = styled.div`
   width: 173px;
+  @media (max-width: ${DEVICES.MOBILE}) {
+    margin-top: 16px;
+    width: 100%;
+  }
 `
 export const ContainerTotalPrice = styled.div`
   display: flex;
   align-items: center;
   margin-right: 24px;
+  @media (max-width: ${DEVICES.MOBILE}) {
+    width: 100%;
+    justify-content: space-between;
+    margin: 0 auto;
+  }
 `
 
 export const ValueTotalPrice = styled.p`

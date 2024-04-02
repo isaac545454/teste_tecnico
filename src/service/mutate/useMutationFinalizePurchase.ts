@@ -12,7 +12,7 @@ export type MutationProps<TResponse, TError, TParams> = Omit<
 
 export const useMutationFinalizePurchase = ({
   ...rest
-}: MutationProps<unknown, AxiosError, FinalizePurchaseParams>) => {
+}: MutationProps<unknown, AxiosError, FinalizePurchaseParams> = {}) => {
   return useMutation<unknown, AxiosError, FinalizePurchaseParams>({
     mutationFn: (data) => FinalizePurchase(data),
     ...rest,

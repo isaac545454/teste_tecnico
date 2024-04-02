@@ -39,6 +39,10 @@ export const ContainerCount = styled.div`
   align-items: center;
   justify-content: start;
   margin-left: 10px;
+
+  @media (max-width: ${DEVICES.MOBILE}) {
+    margin-left: 0px;
+  }
 `
 export const Count = styled.p`
   height: 26px;
@@ -49,6 +53,10 @@ export const Count = styled.p`
   border: 1px solid ${THEME_COLOR.customGray};
   border-radius: 4px;
   margin: 0 11px;
+
+  @media (max-width: ${DEVICES.MOBILE}) {
+    width: 59x;
+  }
 `
 
 export const Button = styled.button`

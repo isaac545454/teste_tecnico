@@ -6,7 +6,7 @@ export const CartCard = (props: ProductWithTotal) => {
   return (
     <div>
       <CardDesktop {...props} />
-      <CardMobile />
+      <CardMobile {...props} />
     </div>
   )
 }

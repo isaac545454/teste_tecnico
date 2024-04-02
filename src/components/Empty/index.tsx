@@ -8,9 +8,6 @@ type EmptyProps = {
   onClick: () => void
 }
 
-//"Parece que não há nada por aqui :("
-//"Recarregar página"
-
 export const Empty = ({ img, onClick, title, textButton }: EmptyProps) => {
   return (
     <S.NotItens>

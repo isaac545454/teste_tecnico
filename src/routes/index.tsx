@@ -3,6 +3,7 @@ import { Home } from "../Pages/Home"
 import { PATH } from "./path"
 import { Cart } from "../Pages/Cart"
 import { Layout } from "../layout"
+import { PurchaseMade } from "../Pages/PurchaseMade"
 
 export const routes = createBrowserRouter([
   {
@@ -18,6 +19,14 @@ export const routes = createBrowserRouter([
     element: (
       <Layout>
         <Cart />
+      </Layout>
+    ),
+  },
+  {
+    path: PATH.PURCHASEMADE,
+    element: (
+      <Layout>
+        <PurchaseMade />
       </Layout>
     ),
   },

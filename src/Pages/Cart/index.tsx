@@ -6,10 +6,14 @@ import * as S from "./style"
 import ImageEmpity from "/Group.svg"
 import { PATH } from "../../routes/path"
 import { Empty } from "../../components/Empty"
+import { useMutationFinalizePurchase } from "../../service/mutate/useMutationFinalizePurchase"
 
 export const Cart = () => {
   const { cart: DataCart, total } = useCartContext()
   const navigate = useNavigate()
+  const { mutate } = useMutationFinalizePurchase({
+    onSuccess: () => navigate(PATH.PURCHASEMADE),
+  })
 
   if (DataCart.length === 0) {
     return (
@@ -36,7 +40,9 @@ export const Cart = () => {
       <S.Line />
       <S.FooterCard>
         <S.ContainerButton>
-          <Button>FINALIZAR PEDIDO</Button>
+          <Button onClick={() => mutate({ params: DataCart })}>
+            FINALIZAR PEDIDO
+          </Button>
         </S.ContainerButton>
         <S.ContainerTotalPrice>
           <S.TextTotalPrice>TOTAL</S.TextTotalPrice>

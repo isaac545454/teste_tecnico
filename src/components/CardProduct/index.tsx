@@ -5,22 +5,26 @@ import * as S from "./style"
 
 type CardProductProps = {
   onClick: (item: Product) => void
+  countItens: number
 } & Product
 
 export const CardProduct = (props: CardProductProps) => {
-  const { id, image, price, title, onClick } = props
+  const { id, image, price, title, onClick, countItens } = props
   return (
     <S.Container key={id}>
       <S.Image src={image} alt={title} />
       <S.Title>{title}</S.Title>
-      <S.Price>{price}</S.Price>
-      <Button onClick={() => onClick({ id, image, price, title })}>
+      <S.Price>{price.toFixed(2)}</S.Price>
+      <Button
+        isActive={!!countItens}
+        onClick={() => onClick({ id, image, price, title })}
+      >
         <S.TextButton>
           <S.ImageButton
             src={ImageNewCart}
             alt="icone de adicionar um novo item"
           />
-          <span>0</span>
+          <span>{countItens}</span>
         </S.TextButton>
         ADICIONAR AO CARRINHO
       </Button>

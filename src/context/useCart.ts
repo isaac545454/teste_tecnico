@@ -5,11 +5,18 @@ import { ProductWithTotal } from "../models/ProductWithTotal"
 export const useCart = () => {
   const [cart, setCart] = useState<Array<ProductWithTotal>>([])
   const [total, setTotal] = useState(0)
+  const [cartItemCount, setCartItemCount] = useState(0)
 
   const TotalResultsCart = (items: Array<ProductWithTotal>) => {
     const MyCart = items
     const result = MyCart.reduce((acc, obj) => acc + obj.total, 0)
     setTotal(parseFloat(result.toFixed(2)))
+  }
+
+  const TotalCarItemCount = (items: Array<ProductWithTotal>) => {
+    const MyCart = items
+    const result = MyCart.reduce((acc, obj) => acc + obj.amount, 0)
+    setCartItemCount(result)
   }
 
   function AddItemCart(newItem: Product) {
@@ -24,6 +31,7 @@ export const useCart = () => {
 
       setCart(cartList)
       TotalResultsCart(cartList)
+      TotalCarItemCount(cartList)
       return
     }
 
@@ -35,6 +43,7 @@ export const useCart = () => {
 
     setCart((products) => [...products, data])
     TotalResultsCart([...cart, data])
+    TotalCarItemCount([...cart, data])
   }
 
   const RemoveItemCart = (Item: Product) => {
@@ -48,13 +57,15 @@ export const useCart = () => {
 
       setCart(cartList)
       TotalResultsCart(cartList)
+      TotalCarItemCount(cartList)
       return
     }
 
     const removeItem = cart.filter((item) => item.id !== Item.id)
     TotalResultsCart(removeItem)
+    TotalCarItemCount(removeItem)
     setCart(removeItem)
   }
 
-  return { AddItemCart, RemoveItemCart, total, cart }
+  return { AddItemCart, RemoveItemCart, total, cart, cartItemCount }
 }

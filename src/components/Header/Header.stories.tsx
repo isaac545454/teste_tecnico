@@ -1,7 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react"
 import { Header } from "."
 import CartProvider from "../../context/cartContext"
-import { Container } from "./style"
 
 type Story = StoryObj<typeof Header>
 

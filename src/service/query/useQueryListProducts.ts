@@ -1,9 +1,9 @@
 import { useQuery } from "@tanstack/react-query"
-import { ListProducts } from "../http/ListProducts"
+import { ListProducts, ListProductsParams } from "../http/ListProducts"
 
-export const useQueryListProducts = () => {
+export const useQueryListProducts = (params: ListProductsParams) => {
   return useQuery({
     queryKey: ["useQueryListProducts"],
-    queryFn: ListProducts,
+    queryFn: () => ListProducts(params),
   })
 }

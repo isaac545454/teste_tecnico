@@ -7,6 +7,7 @@ import { Product } from "../models/Product"
 type ICart = {
   cart: Array<ProductWithTotal>
   total: number
+  cartItemCount: number
   AddItemCart: (newItem: Product) => void
   RemoveItemCart: (Item: Product) => void
 }
@@ -14,7 +15,7 @@ type ICart = {
 export const CartContext = createContext<ICart>({} as ICart)
 
 function CartProvider({ children }: React.PropsWithChildren) {
-  const { AddItemCart, RemoveItemCart, cart, total } = useCart()
+  const { AddItemCart, RemoveItemCart, cart, total, cartItemCount } = useCart()
   return (
     <CartContext.Provider
       value={{
@@ -22,6 +23,7 @@ function CartProvider({ children }: React.PropsWithChildren) {
         total,
         AddItemCart,
         RemoveItemCart,
+        cartItemCount,
       }}
     >
       {children}

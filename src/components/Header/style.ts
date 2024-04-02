@@ -11,15 +11,19 @@ export const Container = styled.div`
 `
 export const Title = styled.h2`
   color: ${THEME_COLOR.light};
+  cursor: pointer;
 `
 export const ContainerCard = styled.div`
   display: flex;
   height: 38px;
   align-items: center;
+  cursor: pointer;
 `
-export const ContentCard = styled.div`
+export const ContentCard = styled.button`
   margin-right: 8px;
   text-align: end;
+  border: none;
+  background: transparent;
 `
 
 export const Mycart = styled.p`

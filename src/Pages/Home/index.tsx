@@ -18,7 +18,6 @@ export const Home = () => {
     verifyCount,
   } = useHome()
 
-  if (isLoadingProducts) return <Spinner />
   if (ProductsError) {
     return (
       <S.NotItens>
@@ -30,6 +29,7 @@ export const Home = () => {
       </S.NotItens>
     )
   }
+
   return (
     <>
       <Search
@@ -38,17 +38,25 @@ export const Home = () => {
         value={filter}
         onChange={(e) => setFilter(e.target.value)}
       />
-
-      <S.Grid>
-        {dataProducts?.map((item) => (
-          <CardProduct
-            {...item}
-            key={item.id}
-            countItens={verifyCount(item)}
-            onClick={(item) => AddItemCart(item)}
-          />
-        ))}
-      </S.Grid>
+      {isLoadingProducts && <Spinner />}
+      {dataProducts && dataProducts.length === 0 ? (
+        <S.FilterContainer>
+          <S.FilterText>
+            Nenhum item encontrado com o filtro fornecido
+          </S.FilterText>
+        </S.FilterContainer>
+      ) : (
+        <S.Grid>
+          {dataProducts?.map((item) => (
+            <CardProduct
+              {...item}
+              key={item.id}
+              countItens={verifyCount(item)}
+              onClick={(item) => AddItemCart(item)}
+            />
+          ))}
+        </S.Grid>
+      )}
     </>
   )
 }

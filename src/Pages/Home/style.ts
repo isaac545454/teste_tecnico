@@ -7,6 +7,7 @@ export const Grid = styled.div`
   grid-template-columns: repeat(auto-fill, minmax(338px, 1fr));
   gap: 20px;
   margin-top: 24px;
+  padding-bottom: 50px;
 
   @media (max-width: ${DEVICES.MOBILE}) {
     grid-template-columns: 1fr;
@@ -43,8 +44,18 @@ export const TextMessage = styled.p`
   font-size: 20px;
   margin-bottom: 24px;
   text-align: center;
+  width: 70%;
 `
 export const ContainerButton = styled.div`
   padding: 24px;
   width: 173px;
+`
+
+export const FilterContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+`
+export const FilterText = styled.p`
+  color: ${THEME_COLOR.light};
 `

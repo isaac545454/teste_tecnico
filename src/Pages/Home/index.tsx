@@ -4,7 +4,7 @@ import { Spinner } from "../../components/Sprinner"
 import ImageEmpity from "/Group.svg"
 import * as S from "./style"
 import { useHome } from "./HomeModel"
-import { Button } from "../../components/Button"
+import { Empty } from "../../components/Empty"
 
 export const Home = () => {
   const {
@@ -21,13 +21,12 @@ export const Home = () => {
 
   if (ProductsError || (dataProducts && dataProducts.length === 0)) {
     return (
-      <S.NotItens>
-        <S.TextMessage>Parece que não há nada por aqui :(</S.TextMessage>
-        <img src={ImageEmpity} alt="estado de empity" />
-        <S.ContainerButton>
-          <Button onClick={handleReloadProducts}>Recarregar página</Button>
-        </S.ContainerButton>
-      </S.NotItens>
+      <Empty
+        img={ImageEmpity}
+        onClick={handleReloadProducts}
+        textButton="Recarregar página"
+        title="Parece que não há nada por aqui :("
+      />
     )
   }
 

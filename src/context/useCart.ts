@@ -46,6 +46,13 @@ export const useCart = () => {
     TotalCarItemCount([...cart, data])
   }
 
+  const removeProductFromCart = (Item: Product) => {
+    const removeItem = cart.filter((item) => item.id !== Item.id)
+    TotalResultsCart(removeItem)
+    TotalCarItemCount(removeItem)
+    setCart(removeItem)
+  }
+
   const RemoveItemCart = (Item: Product) => {
     const indexItem = cart.findIndex((item) => item.id === Item.id)
     if (cart[indexItem]?.amount > 1) {
@@ -61,11 +68,15 @@ export const useCart = () => {
       return
     }
 
-    const removeItem = cart.filter((item) => item.id !== Item.id)
-    TotalResultsCart(removeItem)
-    TotalCarItemCount(removeItem)
-    setCart(removeItem)
+    removeProductFromCart(Item)
   }
 
-  return { AddItemCart, RemoveItemCart, total, cart, cartItemCount }
+  return {
+    AddItemCart,
+    RemoveItemCart,
+    total,
+    cart,
+    cartItemCount,
+    removeProductFromCart,
+  }
 }

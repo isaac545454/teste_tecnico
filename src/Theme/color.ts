@@ -6,4 +6,5 @@ export const THEME_COLOR = {
   quaternary: "#C0C0C0",
   dark: "#2F2E41",
   customGreen: "#039B00",
+  customGray: "#D9D9D9",
 }

@@ -1,3 +1,3 @@
 export const PurchaseMade = () => {
-  return <div>aaa</div>
+  return <div> </div>
 }

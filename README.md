@@ -58,3 +58,4 @@ src/
 ![home](./imagens_do_projeto/home.png)
 ![pesquisa](./imagens_do_projeto/pesquisa.png)
 ![selecionado](./imagens_do_projeto/selecionado.png)
+![selecionado](./imagens_do_projeto/carrinho.png)

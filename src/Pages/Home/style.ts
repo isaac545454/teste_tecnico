@@ -8,5 +8,7 @@ export const Grid = styled.div`
 
   @media (max-width: ${DEVICES.MOBILE}) {
     grid-template-columns: 1fr;
+    padding: 0 16px;
+    margin-bottom: 50px;
   }
 `

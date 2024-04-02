@@ -19,6 +19,11 @@ export const useHome = () => {
     return filterCart?.amount ?? 0
   }
 
+  const handleReloadProducts = async () => {
+    await setFilter("")
+    ProductsRefetch()
+  }
+
   return {
     filter,
     setFilter,
@@ -28,5 +33,6 @@ export const useHome = () => {
     ProductsError,
     ProductsRefetch,
     AddItemCart,
+    handleReloadProducts,
   }
 }

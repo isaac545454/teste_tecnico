@@ -1,3 +1,8 @@
+import { useCartContext } from "../../context/useContextCart"
+import * as S from "./style"
+
 export const Cart = () => {
-  return <div>Cart</div>
+  const { cart, total } = useCartContext()
+  console.log(cart)
+  return <S.Container>Cart</S.Container>
 }

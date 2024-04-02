@@ -2,7 +2,7 @@ import { Product } from "../../models/Product"
 import { api } from "../API"
 
 export type ListProductsParams = {
-  filter: string
+  filter?: string
 }
 
 export const ListProducts = async ({

@@ -13,18 +13,19 @@ export const Home = () => {
     ProductsRefetch,
     dataProducts,
     filter,
-    isLoadingProducts,
     setFilter,
+    isLoadingProducts,
     verifyCount,
+    handleReloadProducts,
   } = useHome()
 
-  if (ProductsError) {
+  if (ProductsError || (dataProducts && dataProducts.length === 0)) {
     return (
       <S.NotItens>
         <S.TextMessage>Parece que não há nada por aqui :(</S.TextMessage>
         <img src={ImageEmpity} alt="estado de empity" />
         <S.ContainerButton>
-          <Button onClick={() => ProductsRefetch()}>Recarregar página</Button>
+          <Button onClick={handleReloadProducts}>Recarregar página</Button>
         </S.ContainerButton>
       </S.NotItens>
     )
@@ -39,24 +40,16 @@ export const Home = () => {
         onChange={(e) => setFilter(e.target.value)}
       />
       {isLoadingProducts && <Spinner />}
-      {dataProducts && dataProducts.length === 0 ? (
-        <S.FilterContainer>
-          <S.FilterText>
-            Nenhum item encontrado com o filtro fornecido
-          </S.FilterText>
-        </S.FilterContainer>
-      ) : (
-        <S.Grid>
-          {dataProducts?.map((item) => (
-            <CardProduct
-              {...item}
-              key={item.id}
-              countItens={verifyCount(item)}
-              onClick={(item) => AddItemCart(item)}
-            />
-          ))}
-        </S.Grid>
-      )}
+      <S.Grid>
+        {dataProducts?.map((item) => (
+          <CardProduct
+            {...item}
+            key={item.id}
+            countItens={verifyCount(item)}
+            onClick={(item) => AddItemCart(item)}
+          />
+        ))}
+      </S.Grid>
     </>
   )
 }

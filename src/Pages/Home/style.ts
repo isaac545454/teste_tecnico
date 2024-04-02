@@ -12,7 +12,7 @@ export const Grid = styled.div`
   @media (max-width: ${DEVICES.MOBILE}) {
     grid-template-columns: 1fr;
     padding: 0 16px;
-    margin-bottom: 50px;
+    margin-bottom: 80px;
     margin-top: 16px;
     justify-content: center;
   }
@@ -49,13 +49,4 @@ export const TextMessage = styled.p`
 export const ContainerButton = styled.div`
   padding: 24px;
   width: 173px;
-`
-
-export const FilterContainer = styled.div`
-  display: flex;
-  justify-content: center;
-  margin-top: 30px;
-`
-export const FilterText = styled.p`
-  color: ${THEME_COLOR.light};
 `

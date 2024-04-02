@@ -24,6 +24,7 @@ export const ContentCard = styled.button`
   text-align: end;
   border: none;
   background: transparent;
+  cursor: pointer;
 `
 
 export const Mycart = styled.p`

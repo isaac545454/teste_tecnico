@@ -78,5 +78,8 @@ export const useCart = () => {
     cart,
     cartItemCount,
     removeProductFromCart,
+    setCart,
+    setTotal,
+    setCartItemCount,
   }
 }

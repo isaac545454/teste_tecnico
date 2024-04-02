@@ -1,5 +1,4 @@
-<div style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 200px; margin-bottom: 40px;">
-  
+<div style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100px; margin-bottom: 40px;">
   <img src="./public/wefit.jpeg" alt="Empty State" style="max-width: 100%; max-height: 100%;" />
 </div>
 
@@ -53,7 +52,8 @@ src/
 ```
 
 
-## imagens do projeto
+>## 📸 imagens do projeto
+
 ![Empty State](./imagens_do_projeto/empity.png)
 ![home](./imagens_do_projeto/home.png)
 ![pesquisa](./imagens_do_projeto/pesquisa.png)

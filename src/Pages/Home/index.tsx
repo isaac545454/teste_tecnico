@@ -1,9 +1,10 @@
 import { CardProduct } from "../../components/CardProduct"
 import { Search } from "../../components/Search"
 import { Spinner } from "../../components/Sprinner"
-
+import ImageEmpity from "/Group.svg"
 import * as S from "./style"
 import { useHome } from "./HomeModel"
+import { Button } from "../../components/Button"
 
 export const Home = () => {
   const {
@@ -18,8 +19,17 @@ export const Home = () => {
   } = useHome()
 
   if (isLoadingProducts) return <Spinner />
-  if (ProductsError) return <p>Ops... houve um imprevisto</p>
-
+  if (ProductsError) {
+    return (
+      <S.NotItens>
+        <S.TextMessage>Parece que não há nada por aqui :(</S.TextMessage>
+        <img src={ImageEmpity} alt="estado de empity" />
+        <S.ContainerButton>
+          <Button onClick={() => ProductsRefetch()}>Recarregar página</Button>
+        </S.ContainerButton>
+      </S.NotItens>
+    )
+  }
   return (
     <>
       <Search
@@ -28,23 +38,17 @@ export const Home = () => {
         value={filter}
         onChange={(e) => setFilter(e.target.value)}
       />
-      {isLoadingProducts && <Spinner />}
-      {dataProducts && dataProducts?.length === 0 ? (
-        <S.NotItens>
-          <p>Nenhum item encontrado com o filtro fornecido.</p>
-        </S.NotItens>
-      ) : (
-        <S.Grid>
-          {dataProducts?.map((item) => (
-            <CardProduct
-              {...item}
-              key={item.id}
-              countItens={verifyCount(item)}
-              onClick={(item) => AddItemCart(item)}
-            />
-          ))}
-        </S.Grid>
-      )}
+
+      <S.Grid>
+        {dataProducts?.map((item) => (
+          <CardProduct
+            {...item}
+            key={item.id}
+            countItens={verifyCount(item)}
+            onClick={(item) => AddItemCart(item)}
+          />
+        ))}
+      </S.Grid>
     </>
   )
 }

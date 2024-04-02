@@ -14,9 +14,11 @@ export const Default: Story = {
   render: () => {
     return (
       <>
-        <CartProvider>
-          <Header />
-        </CartProvider>
+        <>
+          <CartProvider>
+            <Header />
+          </CartProvider>
+        </>
       </>
     )
   },

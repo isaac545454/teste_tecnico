@@ -1,4 +1,4 @@
-## como rodar 
+> ## 📄 como rodar
 
 ```bash
 npm i
@@ -6,7 +6,7 @@ npm run json-server
 npm run dev
 ```
 
-## arquitetura
+> ## 📁 arquitetura do projeto
 ```shell
 
 src/
@@ -38,9 +38,11 @@ src/
 |   |-- path(enderecos_das_rotas)
 |-- layout/(componentes_que_ficam_ao_redor_como_header)
 |   |-- index
-|-- context/(criando_contexto)
+|-- context/(criando_contexto_para_o_carrinho)
 |   |-- index
- 
+|-- Theme/(detalhes_sobre_estilos)
+|   |-- color(cores_da_aplicão)
+|   |-- devices(tamanho_dos_dispositivos)
  
 ```
 

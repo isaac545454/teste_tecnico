@@ -51,6 +51,15 @@ src/
  
 ```
 
+>>## 🛠️ libs usadas 
+- [`react-query`](https://tanstack.com/query/latest)
+- [`axios`](https://axios-http.com/docs/intro)
+- [`react-router-dom`](https://reactrouter.com/en/main)
+- [`styled-components`](https://styled-components.com/docs)
+- [`json-server`](https://www.npmjs.com/package/json-server)
+- [`react-icons`](https://react-icons.github.io/react-icons/)
+
+
 
 >## 📸 imagens do projeto
 

@@ -1,11 +1,13 @@
+import { CardProduct } from "../../components/CardProduct"
 import { useQueryListProducts } from "../../service/query/useQueryListProducts"
+import * as S from "./style"
 
 export const Home = () => {
-  const { data, isLoading } = useQueryListProducts()
-  console.log(data)
+  const { data: dataProducts, isLoading } = useQueryListProducts()
+
   return (
-    <div>
-      <div>aaaaaaaa</div>
-    </div>
+    <S.Grid>
+      {dataProducts?.map((item) => <CardProduct {...item} key={item.id} />)}
+    </S.Grid>
   )
 }

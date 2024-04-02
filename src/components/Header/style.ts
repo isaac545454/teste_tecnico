@@ -3,8 +3,6 @@ import { THEME_COLOR } from "../../Theme/color"
 import { DEVICES } from "../../Theme/devices"
 
 export const Container = styled.div`
-  max-width: 1080px;
-  margin: auto;
   height: 88px;
   display: flex;
   justify-content: space-between;

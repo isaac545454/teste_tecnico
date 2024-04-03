@@ -12,6 +12,7 @@ export const NotItens = styled.div`
   background-color: ${THEME_COLOR.light};
   height: 596px;
   border-radius: 4px;
+  margin-bottom: 50px;
 
   @media (max-width: ${DEVICES.MOBILE}) {
     padding-left: 16px;

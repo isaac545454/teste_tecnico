@@ -2,14 +2,20 @@
 >##  Desafio de React (wefit - digital service design)
 ![REACTJS](./public/wefit.jpeg)
 
+[Texto do Link](https://teste-tecnico-indol.vercel.app/)
 
 
 
-> ## 📄 como rodar
-
+> ## 📄 como rodar (develop - versão com json-server)
 ```bash
 npm i
 npm run json-server
+npm run dev
+```
+
+> ## 📄 como rodar (main - versão com mockapi)
+```bash
+npm i
 npm run dev
 ```
 

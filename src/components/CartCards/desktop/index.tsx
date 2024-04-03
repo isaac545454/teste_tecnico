@@ -14,7 +14,7 @@ export const CardDesktop = (props: ProductWithTotal) => {
         <S.Image src={image} alt={title} />
         <S.ContainerTitle>
           <S.Title>{title}</S.Title>
-          <S.Title>{price}</S.Title>
+          <S.Title>{formatPrice(price)}</S.Title>
         </S.ContainerTitle>
       </S.ItemGrid>
       <S.ItemGrid>

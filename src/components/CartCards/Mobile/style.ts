@@ -38,6 +38,7 @@ export const Button = styled.button`
   background: transparent;
   align-items: center;
   margin-left: 14px;
+  cursor: pointer;
 `
 export const Subtitle = styled.p`
   font-weight: 700;

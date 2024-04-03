@@ -1,6 +1,9 @@
-<div style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100px; margin-bottom: 40px;">
-  <img src="./public/wefit.jpeg" alt="Empty State" style="max-width: 100%; max-height: 100%;" />
+<div style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100px; padding-bottom: 50px; margin-bottom: 20px;">
+  <img src="./public/wefit.jpeg" alt="Empty State" style="max-width: 100%; max-height: 100%; margin-left: auto; margin-right: auto;" />
+  <p style="text-align: center; font-weight: bold; font-size: 2em;">wefit - digital service design</p>
+  <p style="text-align: center; font-weight: bold; font-size: 2em;">Desafio de Estruturação de Projeto React</p>
 </div>
+
 
 
 > ## 📄 como rodar

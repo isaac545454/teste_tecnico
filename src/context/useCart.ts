@@ -1,6 +1,7 @@
 import { useState } from "react"
 import { Product } from "../models/Product"
 import { ProductWithTotal } from "../models/ProductWithTotal"
+import { formatPrice } from "../utils/formatPrice"
 
 export const useCart = () => {
   const [cart, setCart] = useState<Array<ProductWithTotal>>([])
@@ -10,7 +11,7 @@ export const useCart = () => {
   const TotalResultsCart = (items: Array<ProductWithTotal>) => {
     const MyCart = items
     const result = MyCart.reduce((acc, obj) => acc + obj.total, 0)
-    setTotal(parseFloat(result.toFixed(2)))
+    setTotal(parseFloat(formatPrice(result)))
   }
 
   const TotalCarItemCount = (items: Array<ProductWithTotal>) => {

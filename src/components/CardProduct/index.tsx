@@ -2,6 +2,7 @@ import { Product } from "../../models/Product"
 import { Button } from "../Button"
 import ImageNewCart from "/novo_item_no_carrinho.svg"
 import * as S from "./style"
+import { formatPrice } from "../../utils/formatPrice"
 
 type CardProductProps = {
   onClick: (item: Product) => void
@@ -14,7 +15,7 @@ export const CardProduct = (props: CardProductProps) => {
     <S.Container key={id}>
       <S.Image src={image} alt={title} />
       <S.Title>{title}</S.Title>
-      <S.Price>{price.toFixed(2)}</S.Price>
+      <S.Price>{formatPrice(price)}</S.Price>
       <Button
         isActive={!!countItens}
         onClick={() => onClick({ id, image, price, title })}

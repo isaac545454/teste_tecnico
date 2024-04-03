@@ -7,6 +7,7 @@ import ImageEmpity from "/Group.svg"
 import { PATH } from "../../routes/path"
 import { Empty } from "../../components/Empty"
 import { useMutationFinalizePurchase } from "../../service/mutate/useMutationFinalizePurchase"
+import { formatPrice } from "../../utils/formatPrice"
 
 export const Cart = () => {
   const { cart: DataCart, total, ClearCart } = useCartContext()
@@ -49,7 +50,7 @@ export const Cart = () => {
         </S.ContainerButton>
         <S.ContainerTotalPrice>
           <S.TextTotalPrice>TOTAL</S.TextTotalPrice>
-          <S.ValueTotalPrice>R$ {total.toFixed(2)}</S.ValueTotalPrice>
+          <S.ValueTotalPrice>R$ {formatPrice(total)}</S.ValueTotalPrice>
         </S.ContainerTotalPrice>
       </S.FooterCard>
     </S.Container>

@@ -3,6 +3,7 @@ import CrashImage from "/crash.svg"
 import * as S from "./style"
 import { useCartContext } from "../../../context/useContextCart"
 import { Count } from "./Count"
+import { formatPrice } from "../../../utils/formatPrice"
 
 export const CardDesktop = (props: ProductWithTotal) => {
   const { amount, id, image, price, title } = props
@@ -21,7 +22,7 @@ export const CardDesktop = (props: ProductWithTotal) => {
       </S.ItemGrid>
       <S.ItemGrid>
         <S.ContainerTitle>
-          <S.Title> R$ {price * amount}</S.Title>
+          <S.Title> R$ {formatPrice(price * amount)}</S.Title>
         </S.ContainerTitle>
       </S.ItemGrid>
       <S.ItemGrid>

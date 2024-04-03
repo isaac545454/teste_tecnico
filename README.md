@@ -1,6 +1,8 @@
-<div style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100px; margin-bottom: 40px;">
-  <img src="./public/wefit.jpeg" alt="Empty State" style="max-width: 100%; max-height: 100%;" />
-</div>
+ 
+>##  Desafio de React (wefit - digital service design)
+![REACTJS](./public/wefit.jpeg)
+
+
 
 
 > ## 📄 como rodar

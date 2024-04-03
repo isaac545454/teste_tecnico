@@ -9,19 +9,11 @@ import { Empty } from "../../components/Empty"
 import { useMutationFinalizePurchase } from "../../service/mutate/useMutationFinalizePurchase"
 
 export const Cart = () => {
-  const {
-    cart: DataCart,
-    total,
-    setCart,
-    setCartItemCount,
-    setTotal,
-  } = useCartContext()
+  const { cart: DataCart, total, ClearCart } = useCartContext()
   const navigate = useNavigate()
   const { mutate } = useMutationFinalizePurchase({
     onSuccess: () => {
-      setCart([])
-      setCartItemCount(0)
-      setTotal(0)
+      ClearCart()
       navigate(PATH.PURCHASEMADE)
     },
   })

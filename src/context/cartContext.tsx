@@ -11,9 +11,7 @@ type ICart = {
   AddItemCart: (newItem: Product) => void
   RemoveItemCart: (Item: Product) => void
   removeProductFromCart: (Item: Product) => void
-  setCart: React.Dispatch<React.SetStateAction<ProductWithTotal[]>>
-  setCartItemCount: React.Dispatch<React.SetStateAction<number>>
-  setTotal: React.Dispatch<React.SetStateAction<number>>
+  ClearCart: () => void
 }
 
 export const CartContext = createContext<ICart>({} as ICart)
@@ -26,9 +24,7 @@ function CartProvider({ children }: React.PropsWithChildren) {
     total,
     cartItemCount,
     removeProductFromCart,
-    setCart,
-    setCartItemCount,
-    setTotal,
+    ClearCart,
   } = useCart()
 
   return (
@@ -40,9 +36,7 @@ function CartProvider({ children }: React.PropsWithChildren) {
         RemoveItemCart,
         cartItemCount,
         removeProductFromCart,
-        setCart,
-        setCartItemCount,
-        setTotal,
+        ClearCart,
       }}
     >
       {children}

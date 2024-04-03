@@ -71,6 +71,12 @@ export const useCart = () => {
     removeProductFromCart(Item)
   }
 
+  const ClearCart = () => {
+    setCart([])
+    setCartItemCount(0)
+    setTotal(0)
+  }
+
   return {
     AddItemCart,
     RemoveItemCart,
@@ -78,8 +84,6 @@ export const useCart = () => {
     cart,
     cartItemCount,
     removeProductFromCart,
-    setCart,
-    setTotal,
-    setCartItemCount,
+    ClearCart,
   }
 }

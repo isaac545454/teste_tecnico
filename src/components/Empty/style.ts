@@ -18,6 +18,7 @@ export const NotItens = styled.div`
     padding-left: 16px;
     padding-right: 16px;
     margin: 0 auto;
+    margin-bottom: 50px;
     width: 82%;
     height: 516px;
   }

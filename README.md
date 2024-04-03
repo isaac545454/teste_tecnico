@@ -2,7 +2,7 @@
 >##  Desafio de React (wefit - digital service design)
 ![REACTJS](./public/wefit.jpeg)
 
-[Texto do Link](https://teste-tecnico-indol.vercel.app/)
+[DEPLOY DO PROJETO](https://teste-tecnico-indol.vercel.app/)
 
 
 

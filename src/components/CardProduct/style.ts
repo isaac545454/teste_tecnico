@@ -1,5 +1,6 @@
 import styled from "styled-components"
 import { THEME_COLOR } from "../../Theme/color"
+import { DEVICES } from "../../Theme/devices"
 
 export const Container = styled.div`
   background-color: ${THEME_COLOR.light};
@@ -7,10 +8,13 @@ export const Container = styled.div`
   flex-direction: column;
   align-items: center;
   width: calc(328px - 16px);
-  /* height: calc(324px - 16px); */
   justify-content: space-between;
   border-radius: 4px;
   padding: 16px;
+
+  @media (max-width: ${DEVICES.MOBILE}) {
+    width: 90%;
+  }
 `
 
 export const Image = styled.img`

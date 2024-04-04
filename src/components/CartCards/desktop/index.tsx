@@ -22,7 +22,7 @@ export const CardDesktop = (props: ProductWithTotal) => {
       </S.ItemGrid>
       <S.ItemGrid>
         <S.ContainerTitle>
-          <S.Title> R$ {formatPrice(price * amount)}</S.Title>
+          <S.Title>{formatPrice(price * amount)}</S.Title>
         </S.ContainerTitle>
       </S.ItemGrid>
       <S.ItemGrid>

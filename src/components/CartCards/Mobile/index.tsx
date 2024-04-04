@@ -15,7 +15,7 @@ export const CardMobile = (props: ProductWithTotal) => {
         <S.ContainerTilte>
           <S.Title>{title}</S.Title>
           <S.Title>
-            R$ {formatPrice(price)}
+            {formatPrice(price)}
             <S.Button
               onClick={() => removeProductFromCart({ id, image, price, title })}
             >
@@ -27,7 +27,7 @@ export const CardMobile = (props: ProductWithTotal) => {
           <Count {...props} />
           <S.ContainerPrice>
             <S.Subtitle>SUBTOTAL</S.Subtitle>
-            <S.Price>R$ {formatPrice(amount * price)}</S.Price>
+            <S.Price>{formatPrice(amount * price)}</S.Price>
           </S.ContainerPrice>
         </S.ContainerTilte>
       </S.Grid>

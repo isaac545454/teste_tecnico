@@ -1,3 +1,6 @@
-export const formatPrice = (value: number) => {
-  return value.toFixed(2).toString().replace(".", ",")
+export const formatPrice = (price: number) => {
+  return price.toLocaleString("pt-BR", {
+    style: "currency",
+    currency: "BRL",
+  })
 }

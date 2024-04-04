@@ -50,7 +50,7 @@ export const Cart = () => {
         </S.ContainerButton>
         <S.ContainerTotalPrice>
           <S.TextTotalPrice>TOTAL</S.TextTotalPrice>
-          <S.ValueTotalPrice>R$ {formatPrice(total)}</S.ValueTotalPrice>
+          <S.ValueTotalPrice>{formatPrice(total)}</S.ValueTotalPrice>
         </S.ContainerTotalPrice>
       </S.FooterCard>
     </S.Container>

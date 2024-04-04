@@ -17,6 +17,7 @@ export const Home = () => {
     isLoadingProducts,
     verifyCount,
     handleReloadProducts,
+    InputRef,
   } = useHome()
 
   if (ProductsError || (dataProducts && dataProducts.length === 0)) {
@@ -34,7 +35,11 @@ export const Home = () => {
     <>
       <Search
         placeholder="Buscar filme pelo nome"
-        onClick={() => ProductsRefetch()}
+        onClick={() => {
+          ProductsRefetch()
+          InputRef.current?.blur()
+        }}
+        ref={InputRef}
         value={filter}
         onChange={(e) => setFilter(e.target.value)}
       />

@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { ElementRef, useRef, useState } from "react"
 import { useQueryListProducts } from "../../service/query/useQueryListProducts"
 import { useCartContext } from "../../context/useContextCart"
 import { Product } from "../../models/Product"
@@ -13,6 +13,7 @@ export const useHome = () => {
     refetch: ProductsRefetch,
   } = useQueryListProducts({ filter })
   const { AddItemCart, cart } = useCartContext()
+  const InputRef = useRef<ElementRef<"input">>(null)
 
   const verifyCount = (data: Product): number => {
     const filterCart = cart.find((item) => item.id === data.id)
@@ -34,5 +35,6 @@ export const useHome = () => {
     ProductsRefetch,
     AddItemCart,
     handleReloadProducts,
+    InputRef,
   }
 }

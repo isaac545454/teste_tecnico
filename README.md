@@ -81,5 +81,5 @@ src/
 ![selecionado](./imagens_do_projeto/mobile_pesquisa.png) 
 ![selecionado](./imagens_do_projeto/mobile_selecionado.png) 
 ![selecionado](./imagens_do_projeto/mobile_empty.png) 
-![selecionado](./imagens_do_projeto/mobile_carrinho.png) 
-![selecionado](./imagens_do_projeto/mobile_sucesso.png) 
+![selecionado](./imagens_do_projeto/Mobile_carrinho.png) 
+![selecionado](./imagens_do_projeto/Mobile_sucesso.png) 

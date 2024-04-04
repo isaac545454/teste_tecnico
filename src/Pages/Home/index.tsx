@@ -1,7 +1,6 @@
 import { CardProduct } from "../../components/CardProduct"
 import { Search } from "../../components/Search"
 import { Spinner } from "../../components/Sprinner"
-import ImageEmpity from "/Group.svg"
 import * as S from "./style"
 import { useHome } from "./HomeModel"
 import { Empty } from "../../components/Empty"
@@ -21,14 +20,7 @@ export const Home = () => {
   } = useHome()
 
   if (ProductsError || (dataProducts && dataProducts.length === 0)) {
-    return (
-      <Empty
-        img={ImageEmpity}
-        onClick={handleReloadProducts}
-        textButton="Recarregar página"
-        title="Parece que não há nada por aqui :("
-      />
-    )
+    return <Empty onClick={handleReloadProducts} type="back" />
   }
 
   return (

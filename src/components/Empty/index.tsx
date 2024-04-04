@@ -1,14 +1,14 @@
 import { Button } from "../Button"
+import { TypeEmpity, optionsEmpty } from "./options"
 import * as S from "./style"
 
 type EmptyProps = {
-  img: string
-  title: string
-  textButton: string
+  type: TypeEmpity
   onClick: () => void
 }
 
-export const Empty = ({ img, onClick, title, textButton }: EmptyProps) => {
+export const Empty = ({ onClick, type }: EmptyProps) => {
+  const { img, textButton, title } = optionsEmpty[type]
   return (
     <S.NotItens>
       <S.TextMessage>{title}</S.TextMessage>

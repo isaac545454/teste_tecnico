@@ -10,7 +10,6 @@ export const useCart = () => {
   const TotalResultsCart = (items: Array<ProductWithTotal>) => {
     const MyCart = items
     const result = MyCart.reduce((acc, obj) => acc + obj.total, 0)
-    console.log(result)
     setTotal(result)
   }
 

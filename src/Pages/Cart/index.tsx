@@ -18,7 +18,7 @@ export const Cart = () => {
       navigate(PATH.PURCHASEMADE)
     },
   })
-
+  console.log(total)
   if (DataCart.length === 0) {
     return (
       <Empty

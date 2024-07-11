@@ -1,11 +1,11 @@
-import { useNavigate } from "react-router-dom"
-import { useCartContext } from "../../context/useContextCart"
-import * as S from "./style"
-import ImageCard from "/carrinho.svg"
-import { PATH } from "../../routes/path"
+import { useNavigate } from 'react-router-dom'
+import * as S from './style'
+import ImageCard from '/carrinho.svg'
+import { PATH } from '../../routes/path'
+import { useCartStore } from '../../store/cart/cartStore'
 
 export const Header = () => {
-  const { cartItemCount } = useCartContext()
+  const { cartItemCount } = useCartStore()
   const navigate = useNavigate()
 
   return (

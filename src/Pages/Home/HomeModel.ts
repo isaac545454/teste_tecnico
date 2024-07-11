@@ -1,10 +1,11 @@
-import { ElementRef, useRef, useState } from "react"
-import { useQueryListProducts } from "../../service/query/useQueryListProducts"
-import { useCartContext } from "../../context/useContextCart"
-import { Product } from "../../models/Product"
+import { ElementRef, useRef, useState } from 'react'
+import { useQueryListProducts } from '../../service/query/useQueryListProducts'
+
+import { Product } from '../../models/Product'
+import { useCartStore } from '../../store/cart/cartStore'
 
 export const useHome = () => {
-  const [filter, setFilter] = useState("")
+  const [filter, setFilter] = useState('')
 
   const {
     data: dataProducts,
@@ -12,8 +13,9 @@ export const useHome = () => {
     isError: ProductsError,
     refetch: ProductsRefetch,
   } = useQueryListProducts({ filter })
-  const { AddItemCart, cart } = useCartContext()
-  const InputRef = useRef<ElementRef<"input">>(null)
+
+  const { AddItemCart, cart } = useCartStore()
+  const InputRef = useRef<ElementRef<'input'>>(null)
 
   const verifyCount = (data: Product): number => {
     const filterCart = cart.find((item) => item.id === data.id)
@@ -21,7 +23,7 @@ export const useHome = () => {
   }
 
   const handleReloadProducts = async () => {
-    await setFilter("")
+    await setFilter('')
     ProductsRefetch()
   }
 

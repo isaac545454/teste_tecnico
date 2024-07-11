@@ -1,6 +1,6 @@
-import { useNavigate } from "react-router-dom"
-import { Empty } from "../../components/Empty"
-import { PATH } from "../../routes/path"
+import { useNavigate } from 'react-router-dom'
+import { Empty } from '../../components/Empty'
+import { PATH } from '../../routes/path'
 
 export const PurchaseMade = () => {
   const navigate = useNavigate()
